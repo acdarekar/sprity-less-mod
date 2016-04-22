@@ -18,13 +18,8 @@
   background-position: @sprite-offset-x  @sprite-offset-y;
 }
 
-.sprite(@sprite, @display: block) {
+.sprite(@sprite) {
   .sprite-position(@sprite);
-  background-repeat: no-repeat;
-  overflow: hidden;
-  display: @display;
-  .sprite-width(@sprite);
-  .sprite-height(@sprite);
 }
 
 {{#each layouts}}
@@ -34,7 +29,9 @@
     @media (-webkit-min-device-pixel-ratio: {{ratio}}), (min-resolution: {{dpi}}dpi) {
     {{/if}}
     .{{cssesc ../classname}} {
-      background-image: url('{{escimage url}}');
+      background: url('{{escimage url}}');
+      background-repeat: no-repeat;
+      overflow: hidden;
       {{#if dpi}}
       background-size: {{baseWidth}}px {{baseHeight}}px;
       {{/if}}
@@ -44,4 +41,12 @@
     {{/if}}
   {{/each}}
 
+{{/each}}
+
+{{#each layouts}}
+  {{#each layout.items}}
+    .{{cssesc ../classname}}.interest-{{escimage meta.name}} {
+      .sprite(@{{escimage meta.name}});
+    }
+  {{/each}}
 {{/each}}
