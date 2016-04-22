@@ -1,19 +1,19 @@
 {
-  "name": "sprity-less",
+  "name": "sprity-less-mod",
   "version": "1.0.3",
-  "description": "less style processor for sprity",
+  "description": "less style processor for sprity modded for template changes",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sprity/sprity-less.git"
+    "url": "https://github.com/adarekar/sprity-less-mod.git"
   },
-  "homepage": "https://github.com/sprity/sprity-less",
+  "homepage": "https://github.com/adarekar/sprity-less-mod",
   "bugs": {
-    "url": "https://github.com/sprity/sprity-less/issues"
+    "url": "https://github.com/adarekar/sprity-less-mod/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/sprity/sprity-less/blob/master/LICENSE-MIT"
+      "url": "https://github.com/adarekar/sprity-less-mod/blob/master/LICENSE-MIT"
     }
   ],
   "author": {
