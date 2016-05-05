@@ -28,7 +28,20 @@
     {{#if dpi}}
     @media (-webkit-min-device-pixel-ratio: {{ratio}}), (min-resolution: {{dpi}}dpi) {
     {{/if}}
-    .category-dp, .{{cssesc ../classname}} {
+    {{#last_index sprites}}
+    .category-dp {
+      background: url('{{escimage url}}');
+      background-size: {{@last_index * 64}}px 64px;
+      ## background-size: {{math @last_index "*" 64}}px 64px;
+      background-repeat: no-repeat;
+      overflow: hidden;
+      {{#if dpi}}
+      background-size: {{baseWidth}}px {{baseHeight}}px;
+      {{/if}}
+    }
+    {{/last_index}}
+
+    .{{cssesc ../classname}} {
       background: url('{{escimage url}}');
       background-repeat: no-repeat;
       overflow: hidden;
