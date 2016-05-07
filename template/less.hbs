@@ -4,6 +4,12 @@
   {{/each}}
 {{/each}}
 
+{{#each layouts}}
+  {{#each layout.items}}
+    @big-{{#if ../../opt.split}}{{escimage ../../name}}-{{/if}}{{escimage meta.name}}: -{{math (baseDim x) "*" 1.6}}px -{{baseDim y}}px {{baseDim width}}px {{baseDim height}}px;
+  {{/each}}
+{{/each}}
+
 .sprite-width(@sprite) {
   width: extract(@sprite, 3);
 }
@@ -52,8 +58,11 @@
 
 {{#each layouts}}
   {{#each layout.items}}
-    .category-dp.interest-{{escimage meta.name}}, .{{cssesc ../classname}}.interest-{{escimage meta.name}} {
+    .{{cssesc ../classname}}.interest-{{escimage meta.name}} {
       .sprite(@{{escimage meta.name}});
+    }
+    .category-dp.interest-{{escimage meta.name}} {
+      .sprite(@big-{{escimage meta.name}});
     }
   {{/each}}
 {{/each}}
