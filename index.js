@@ -18,8 +18,9 @@ var transform = Promise.method(function (layouts, source, opt, Handlebars) {
 
 module.exports = {
   process: function (layouts, opt, Handlebars) {
-    Handlebars.registerHelper('length', function(layouts, sprites, options) {
-      return context.length;
+    Handlebars.registerHelper('length', function(layouts, options) {
+      // console.log(layouts);
+      return layouts[0].layout.items.length*64;
     });
 
     Handlebars.registerHelper('math', function(lvalue, operator, rvalue, options) {
