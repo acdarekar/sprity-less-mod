@@ -6,7 +6,7 @@
 
 {{#each layouts}}
   {{#each layout.items}}
-    @big-{{#if ../../opt.split}}{{escimage ../../name}}-{{/if}}{{escimage meta.name}}: -{{math (baseDim x) "*" 1.6}}px -{{baseDim y}}px {{baseDim width}}px {{baseDim height}}px;
+    @big-{{#if ../../opt.split}}{{escimage ../../name}}-{{/if}}{{escimage meta.name}}: -{{math (baseDim x) "*" 1.6}}px -{{baseDim y}}px {{math (baseDim width) "*" 1.6}}px {{(baseDim height) "*" 1.6}}px;
   {{/each}}
 {{/each}}
 
