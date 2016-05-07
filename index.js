@@ -18,6 +18,24 @@ var transform = Promise.method(function (layouts, source, opt, Handlebars) {
 
 module.exports = {
   process: function (layouts, opt, Handlebars) {
+    Handlebars.registerHelper('length', function(layouts, options) {
+      // console.log(layouts);
+      return layouts[0].layout.items.length*64;
+    });
+
+    Handlebars.registerHelper('math', function(lvalue, operator, rvalue, options) {
+        lvalue = parseFloat(lvalue);
+        rvalue = parseFloat(rvalue);
+
+        return {
+          "+": lvalue + rvalue,
+          "-": lvalue - rvalue,
+          "*": lvalue * rvalue,
+          "/": lvalue / rvalue,
+          "%": lvalue % rvalue
+        }[operator];
+    });
+
     return getTemplate()
       .then(function (source) {
         return transform(layouts, source, opt, Handlebars);

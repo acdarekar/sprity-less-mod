@@ -4,6 +4,12 @@
   {{/each}}
 {{/each}}
 
+{{#each layouts}}
+  {{#each layout.items}}
+    @big-{{#if ../../opt.split}}{{escimage ../../name}}-{{/if}}{{escimage meta.name}}: -{{math (baseDim x) "*" 1.6}}px -{{baseDim y}}px {{baseDim width}}px {{baseDim height}}px;
+  {{/each}}
+{{/each}}
+
 .sprite-width(@sprite) {
   width: extract(@sprite, 3);
 }
@@ -28,6 +34,7 @@
     {{#if dpi}}
     @media (-webkit-min-device-pixel-ratio: {{ratio}}), (min-resolution: {{dpi}}dpi) {
     {{/if}}
+
     .category-dp, .{{cssesc ../classname}} {
       background: url('{{escimage url}}');
       background-repeat: no-repeat;
@@ -43,10 +50,19 @@
 
 {{/each}}
 
+.category-dp {
+  background-size: {{length layouts}}px 64px;
+  height: 64px;
+  width: 64px;
+}
+
 {{#each layouts}}
   {{#each layout.items}}
-    .category-dp.interest-{{escimage meta.name}}, .{{cssesc ../classname}}.interest-{{escimage meta.name}} {
+    .{{cssesc ../classname}}.interest-{{escimage meta.name}} {
       .sprite(@{{escimage meta.name}});
+    }
+    .category-dp.interest-{{escimage meta.name}} {
+      .sprite(@big-{{escimage meta.name}});
     }
   {{/each}}
 {{/each}}
