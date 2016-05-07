@@ -1,19 +1,19 @@
 {
   "name": "sprity-less-mod",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "less style processor for sprity modded for template changes",
   "repository": {
     "type": "git",
-    "url": "https://github.com/adarekar/sprity-less-mod.git"
+    "url": "https://github.com/pmindia/sprity-less-mod.git"
   },
-  "homepage": "https://github.com/adarekar/sprity-less-mod",
+  "homepage": "https://github.com/pmindia/sprity-less-mod",
   "bugs": {
-    "url": "https://github.com/adarekar/sprity-less-mod/issues"
+    "url": "https://github.com/pmindia/sprity-less-mod/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/adarekar/sprity-less-mod/blob/master/LICENSE-MIT"
+      "url": "https://github.com/pmindia/sprity-less-mod/blob/master/LICENSE-MIT"
     }
   ],
   "author": {
@@ -21,6 +21,13 @@
     "email": "alexander@slansky.net",
     "url": "http://slansky.net"
   },
+  "contributors": [
+    {
+      "name": "Akshay Darekar",
+      "email": "acdarekar@gmail.com",
+      "url": "http://github.com/acdarekar"
+    }
+  ],
   "engines": {
     "node": ">=0.10.0"
   },
